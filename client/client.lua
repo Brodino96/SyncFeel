@@ -466,14 +466,3 @@ function L(line)
 end
 
 --------------- # --------------- # --------------- # --------------- # ---------------
---[[
-RegisterCommand("brrtest", function ()
-    CreateThread(function ()
-        while true do
-            Wait(0)
-
-            print(IsPedShooting(PlayerPedId()))
-        end
-    end)
-end, false)
-]]
