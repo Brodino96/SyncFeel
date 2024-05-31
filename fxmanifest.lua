@@ -3,7 +3,8 @@ game "gta5"
 lua54 "yes"
 
 author "Brodino"
-descritpion "Brrr brrr"
+descritpion "Sync what happens inside the game with your sex toys"
+version "1.0"
 
 shared_scripts {
     "@ox_lib/init.lua",
