@@ -329,6 +329,7 @@ end)
 
 RegisterNUICallback("disconnectSuccessful", function ()
     lib.notify({ type = "error", title = L("toy_disconnected") })
+    toyAvailable = false
 end)
 
 --------------- # --------------- # --------------- # --------------- # ---------------
