@@ -440,6 +440,14 @@ AddEventHandler("brbrr:forcebrr", function (intensity, duration, range, coords)
     })
 end)
 
+RegisterCommand("brrhelp", function ()
+    lib.alertDialog({
+        content = L("command_help_text"),
+        centered = true,
+        size = "xl"
+    })
+end, false)
+
 CreateThread(function ()
     TriggerEvent("chat:addSuggestion", "/forcebrr", L("command_desc"), {
         { name = L("command_mode"), help = L("command_mode_desc") },
@@ -447,7 +455,8 @@ CreateThread(function ()
         { name = L("command_duration"), help = L("command_duration_desc") },
         { name = L("command_range"), help = L("command_range_desc") }
     })
-    TriggerEvent("chat:addSuggestion", "/brr", L("settings_command_desc"))
+    TriggerEvent("chat:addSuggestion", "/brr", L("command_settings_desc"))
+    TriggerEvent("chat:addSuggestion", "/brrhelp", L("command_help_desc"))
 end)
 
 --------------- # --------------- # --------------- # --------------- # ---------------

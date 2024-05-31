@@ -1,8 +1,10 @@
 Locale["en"] = {
-    -- Notifiche comandi
+    -- Command notifications
     ["force_server_settings"] = "The server does not allow players to change their own settings",
     ["not_enough_permissions"] = "You don't have enough permissions to use this command",
-    ["settings_command_desc"] = "Vibration manager menu",
+
+    -- Commands
+    ["command_settings_desc"] = "Vibration manager menu",
     ["command_desc"] = "Makes players vibrate",
     ["command_mode"] = "Mode",
     ["command_mode_desc"] = "\"all\" = All the players in the server | \"range\" = All the players in a given range | \"id\" = Player Id",
@@ -12,8 +14,10 @@ Locale["en"] = {
     ["command_duration_desc"] = "Vibration duration (1-60)",
     ["command_range"] = "Range",
     ["command_range_desc"] = "Range in wich players will vibrate (only works in range mode)",
+    ["command_help_desc"] = "Use this command if you have issues with starting the script",
+    ["command_help_text"] = "Make sure you have opened \"Intiface Central\", navigate to the \"device\" tab using the buttons on the left, click on the big play button in the top left (Status should change from \"Engine not running\" to \"Engine running, waiting for client\"), now the text \"Start Scanning\" should be highlighted, click on it and wait until the toys are connected (If you are using a toy with a cable make sure it is connected to the pc, if you are instead using a toy via bluetooth make sure that bluetooth is enabled on your pc), when the toys are connected come back to the game and try again",
 
-    -- Titoli nel menù
+    -- Menu titles
     ["main_menu_title"] = "Vibration menu",
     ["dmg_title"] = "Damage",
     ["dmg_desc"] = "Every time you take damage you will vibrate",
@@ -25,7 +29,7 @@ Locale["en"] = {
     ["server_desc"] = "Accept commands from the server to make you vibrate",
     ["activate_deactivate"] = "Activate/deactivate",
 
-    -- Testi nei vari menù di interazione
+    -- Interaction menu texts
     ["speed_treshold"] = "Speed limit (Km/h)",
     ["active"] = "Active",
     ["randomize_intensity"] = "Randomize intensity",
@@ -35,8 +39,8 @@ Locale["en"] = {
     ["min_duration"] = "Min duration",
     ["max_duration"] = "Max duration",
 
-    -- Notifiche di collegamento
-    ["toy_connection_error"] = "Link with toy failed",
+    -- Link notifications
+    ["toy_connection_error"] = "Link with toy failed, use \"/brrhelp\" to get more info",
     ["toy_connection_success"] = "Link with Toy successful",
     ["toy_disconnected"] = "Link with Toy just dropped",
 }

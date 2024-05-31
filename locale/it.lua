@@ -2,7 +2,9 @@ Locale["it"] = {
     -- Notifiche comandi
     ["force_server_settings"] = "Il server non permette di modificare i propri settaggi",
     ["not_enough_permissions"] = "Non hai i permessi necessari per utilizzare questo comando",
-    ["settings_command_desc"] = "Menù per gestione delle vibrazioni",
+
+    -- Comandi
+    ["command_settings_desc"] = "Menù per gestione delle vibrazioni",
     ["command_desc"] = "Fai vibrare i giocatori",
     ["command_mode"] = "Modalità",
     ["command_mode_desc"] = "\"all\" = Tutti i giocatori nel server | \"range\" = Tutti i giocatori entro un certo range da te | \"id\" = Id del giocatore",
@@ -12,6 +14,8 @@ Locale["it"] = {
     ["command_duration_desc"] = "Durata della vibrazione (1-60)",
     ["command_range"] = "Range",
     ["command_range_desc"] = "Dimensione del raggio (solo se in modalità range)",
+    ["command_help_desc"] = "Utilizza questo comando se stai avendo problemi ad inizializzare lo script",
+    ["command_help_text"] = "Assicurati di aver aperto il software \"Intiface Central\", raggiungi la tab \"device\", premi sul grande bottone play in alto a sinistra (Status dovrebbe cambiare da \"Engine not running\" a \"Engine running, waiting for client\"), adesso la scritta \"Start Scanning\" dovrebbe essere illuminata, premila e aspetta che i giocattoli si connettano (Se stai utilizzando dei giocattoli con cavo assicurati che il cavo sia collegato al pc, se invece stai utilizzando dei giocattoli con bluetooth assicurati di aver attivato il bluetooth sul pc), quando i giocattoli sono collegati torna in gioco e riprova",
 
     -- Titoli nel menù
     ["main_menu_title"] = "Menù Vibrazioni",
@@ -36,7 +40,7 @@ Locale["it"] = {
     ["max_duration"] = "Durata massima",
 
     -- Notifiche di collegamento
-    ["toy_connection_error"] = "Collegamento con Toy fallito",
+    ["toy_connection_error"] = "Collegamento con Toy fallito, usa \"/brrhelp\" per altre informazioni",
     ["toy_connection_success"] = "Collegamento con Toy avvenuto con successo",
     ["toy_disconnected"] = "Il collegamento con il Toy si è interrotto",
 }
