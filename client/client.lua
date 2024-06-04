@@ -313,23 +313,27 @@ end
 
 --------------- # --------------- # --------------- # --------------- # ---------------
 
-RegisterNUICallback("connectionError", function ()
+RegisterNUICallback("connectionError", function (data, cb)
     lib.notify({ type = "error", title = L("toy_connection_error") })
+    cb()
 end)
 
-RegisterNUICallback("connectionSuccess", function ()
+RegisterNUICallback("connectionSuccess", function (data, cb)
     toyAvailable = true
     lib.notify({ type = "success", title = L("toy_connection_success") })
     mainThread()
+    cb()
 end)
 
-RegisterNUICallback("deviceDisconnected", function ()
+RegisterNUICallback("deviceDisconnected", function (data, cb)
     toyAvailable = false
+    cb()
 end)
 
-RegisterNUICallback("disconnectSuccessful", function ()
+RegisterNUICallback("disconnectSuccessful", function (data, cb)
     lib.notify({ type = "error", title = L("toy_disconnected") })
     toyAvailable = false
+    cb()
 end)
 
 --------------- # --------------- # --------------- # --------------- # ---------------

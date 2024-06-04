@@ -1,5 +1,5 @@
 Config = {
-    locale = "en",
+    locale = "it",
     aceCommandsPermissions = { "admin" }, -- Aces that have permission to use the command /forcebrr
 
     forceServerSettings = false,

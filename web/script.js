@@ -15,26 +15,37 @@ window.addEventListener("message", function(event) {
 
         case "connect":
             connectToy().catch(function () {
-                $.post(`https://${GetParentResourceName()}/connectionError`, JSON.stringify({}))
+                fetch(`https://${GetParentResourceName()}/connectionError`, { method: "POST", body: JSON.stringify({})}).then(resp => console.log(resp))
             })
             break
 
         case "disconnect":
             client.disconnect()
-            $.post(`https://${GetParentResourceName()}/disconnectSuccessful`, JSON.stringify({}))
+            fetch(`https://${GetParentResourceName()}/disconnectSuccessful`, { method: "POST", body: JSON.stringify({})}).then(resp => console.log(resp))
             break
     }
 })
 
 async function vibrate(data) {
-    //console.log(`Intensity: ${data.intensity}, duration: ${data.duration}`)
+    console.log(`Intensity: ${data.intensity}, duration: ${data.duration}`)
     devices.forEach(device => {
-        device.vibrate(data.intensity / 20)
-    });
+        if (data.intensity > 0.0) {
+            device.vibrate(data.intensity / 20)
+        } else {
+            device.stop()
+        }
+    })
+    devices.forEach(device => {
+        setTimeout(async () => {
+            // And now we disconnect as usual
+            await device.stop()
+        }, 3000);
+    })
+    /*
     await new Promise(r => this.setTimeout(r, (data.duration * 1000)))
     devices.forEach(device => {
         device.stop()
-    });
+    })*/
 }
 
 async function speeding(data) {
@@ -45,7 +56,7 @@ async function speeding(data) {
         } else {
             device.stop()
         }
-    });
+    })
 }
 
 async function connectToy() {
@@ -56,16 +67,16 @@ async function connectToy() {
     if (JSON.stringify(client.devices) == "[]") {
 
         await client.disconnect()
-        $.post(`https://${GetParentResourceName()}/connectionError`, JSON.stringify({}))
+        fetch(`https://${GetParentResourceName()}/connectionError`, { method: "POST", body: JSON.stringify({})}).then(resp => console.log(resp))
 
     } else {
 
         devices = client.devices
-        $.post(`https://${GetParentResourceName()}/connectionSuccess`, JSON.stringify({}))
+        fetch(`https://${GetParentResourceName()}/connectionSuccess`, { method: "POST", body: JSON.stringify({})}).then(resp => console.log(resp))
 
         client.addListener("deviceremoved", () => {
             client.disconnect()
-            $.post(`https://${GetParentResourceName()}/deviceDisconnected`, JSON.stringify({}))
+            fetch(`https://${GetParentResourceName()}/deviceDisconnected`, { method: "POST", body: JSON.stringify({})}).then(resp => console.log(resp))
         })
     }
 }
